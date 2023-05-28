@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-05-2023 a las 20:39:07
+-- Tiempo de generación: 29-05-2023 a las 01:54:26
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `singapp`
+-- Base de datos: `db_signapp`
 --
+CREATE DATABASE IF NOT EXISTS `db_signapp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `db_signapp`;
 
 -- --------------------------------------------------------
 
@@ -29,8 +31,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `rol` (
   `idrol` int(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nombre` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -47,21 +49,19 @@ INSERT INTO `rol` (`idrol`, `nombre`) VALUES
 --
 
 CREATE TABLE `usuario` (
-  `nombre` varchar(60) NOT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
   `correo` varchar(90) NOT NULL,
-  `nickname` varchar(20) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
+  `nickname` varchar(60) DEFAULT NULL,
+  `contraseña` varchar(45) NOT NULL,
   `rol_idrol` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`nombre`, `correo`, `nickname`, `contraseña`, `rol_idrol`) VALUES
-('deivis olascoaga', 'deivisalcedo.o@gmail.com', 'jesi', '1234', 2),
-('jesid olasocoaga', 'deivisalcedo77@gmail.com', 'sadi', '1234', 2),
-('edinson carrascal reyes', 'edinsoncarrascal2001@gmail.com', 'edinson2004', '12345', 1);
+('edinson carrascal reyes', 'edinson@gmail.com', 'edinson2001', '12345', 1);
 
 --
 -- Índices para tablas volcadas
@@ -77,18 +77,8 @@ ALTER TABLE `rol`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`correo`),
-  ADD KEY `rol_idrol` (`rol_idrol`) USING BTREE;
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `rol`
---
-ALTER TABLE `rol`
-  MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  ADD PRIMARY KEY (`correo`,`rol_idrol`) USING BTREE,
+  ADD KEY `fk_usuario_rol1` (`rol_idrol`);
 
 --
 -- Restricciones para tablas volcadas

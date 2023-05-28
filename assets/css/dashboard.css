@@ -1,0 +1,153 @@
+
+
+
+
+
+
+
+
+
+
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*INICIO DE SESION----------------------------*/
+
+
+
+
+/*----------------------------------------*/
+
+
+/*    dashboard */
+
+.baner {
+    position: relative;
+    height: 60vh;
+    width: 90%;
+    margin: auto;
+    margin-bottom: -24rem;
+}
+
+
+
+.baner .text {
+    
+    text-align: center;
+    color: #000000;
+    transform: translateX(595px);
+    bottom: 200px;
+    left: -100px;
+    position: absolute;
+    z-index: 5;
+    background-color: #f1f2f3;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+img#img_banner {
+    top: -45%;
+}
+
+#img_banner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    border-radius: 20px;
+}
+
+
+.stat {
+    border-right: 1px solid gray;
+}
+
+
+
+
+
+
+/*    cartas */
+
+.container122{
+    margin-top: -10%;
+}
+
+.cover-samll {
+    height: 200px;
+}
+
+.card {
+    border: 0 !important;
+    background: local;
+    top: 30px;
+
+}
+.text p{
+    text-align: center;
+    justify-items: center;
+}
+.miscursos{
+text-align: center;
+transform: translateY(10px);
+
+}
+.card-body{
+    padding-bottom: 20px;
+    
+}
+.card-header {
+    height: 50px;
+    border-radius: 30px;
+    transform: translateY(70px);
+    box-shadow: 2px 2px 4px solid black;
+}
+
+.card-tittle {
+    min-height: 4rem;
+}
+
+.card-text {
+    min-height: 2rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.row {
+
+    text-align: center;
+    align-items: center;
+
+
+}
+
+.row span {
+    color: #f7f6f5;
+
+}
