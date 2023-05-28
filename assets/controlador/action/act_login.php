@@ -20,6 +20,7 @@
             $_SESSION['go'] = 'Inicio seccion correctamente';
             header("location: ../../sesion.php");
             
+            
        }else{ // No puede iniciar sesión
             $_SESSION['error']= 'Usuario o contraseña incorrecta, intente nuevamente';
             header("location: ../../sesion.php");
