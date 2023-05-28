@@ -13,10 +13,10 @@
 
        if($usuario != null){ // Puede iniciar sesión
            session_start();
-           $_SESSION['rol'] = $usuario->getRol();
+           $_SESSION['ROL'] = $usuario->getRol();
             $_SESSION['NOMBRE_USUARIO'] = $usuario->getNickname();
             $_SESSION['Nombre_Completo'] = $usuario ->getNombre();
-            $_SESSION['correo'] = $usuario->getCorreo();
+            $_SESSION['CORREO'] = $usuario->getCorreo();
             $_SESSION['go'] = 'Inicio seccion correctamente';
             header("location: ../../sesion.php");
             

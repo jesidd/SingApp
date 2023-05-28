@@ -68,82 +68,52 @@ class User{
             );
             return $resultado;
         }else{
-            $errMsg .= 'correo o nickname already existing';
+            $php_errormsg .= 'correo o nickname already existing';
             return null;
         }
     }
 
-    /*
-    public function buscarUsuarioPorUser($username){
+
+    public function buscarUsuario($correo)
+    {
         $data_source = new ConectBe();
-        $data_table= $data_source->ejecutarConsulta("SELECT * FROM usuarios WHERE usuario = :username", 
-                                                    array(':username'=>$username));
-        $usuario=null;
-        if(count($data_table)==1){
-            foreach($data_table as $indice => $valor){
+        //password_hash("rasmuslerdorf", PASSWORD_DEFAULT)
+        $data_table = $data_source->ejecutarConsulta(
+            "SELECT * FROM usuario WHERE correo = :correo",
+            array(':correo' => $correo)
+        );
+        $usuario = null;
+        if (count($data_table) == 1) {
+            foreach ($data_table as $indice => $valor) {
                 $usuario = new Usuario(
-                    $data_table[$indice]["id"],
-                    $data_table[$indice]["usuario"],
+                    $data_table[$indice]["nombre"],
                     $data_table[$indice]["correo"],
-                    $data_table[$indice]["password"]
-                    );
+                    $data_table[$indice]["password"],
+                    $data_table[$indice]["nickname"],
+                    $data_table[$indice]["rol"]
+                    
+
+                );
             }
             return $usuario;
-        }else{
+        } else {
             return null;
         }
-    }    
+    }
 
-    public function buscarUsuarioPorId($id){
-        $data_source = new ConectBe();
+   
 
-        $data_table= $data_source->ejecutarConsulta("SELECT * FROM usuarios WHERE id = :id", 
-                                                    array(':id'=>$id));
-        $usuario=null;
-        if(count($data_table)==1){
-            foreach($data_table as $indice => $valor){
-                $usuario = new Usuario(
-                    $data_table[$indice]["id"],
-                    $data_table[$indice]["usuario"],
-                    $data_table[$indice]["correo"],
-                    $data_table[$indice]["password"]
-                    );
-            }
-            return $usuario;
-        }else{
-            return null;
-        }
-    }    
+   
     
-    public function verificarExistenteExcpt($username, $correo,$id){
-        $conectbe = new ConectBe();
 
-        $data_table= $conectbe->ejecutarConsulta("SELECT * FROM usuarios WHERE id <> $id AND ( usuario = :user OR correo = :correo )", 
-                                                    array(':user'=>$username,':correo'=>$correo));
-        $usuario= null;
-        if(count($data_table)==1){
-            foreach($data_table as $indice => $valor){
-                $usuario = new Usuario(
-                        $data_table[$indice]["id"],
-                        $data_table[$indice]["usuario"],
-                        $data_table[$indice]["correo"],
-                        $data_table[$indice]["password"]
-                        );
-            }
-            return $usuario;
-        }else{
-            return null;
-        }
 
-    }*/
-
-    /*
+    
     public function modificarUsuario(Usuario $usuario){
         $data_source= new ConectBe();
 
         //$usuarioFirst = $this->buscarUsuarioPorUser($usuario->getUsername());$usuarioFirst->getId()
         
-        $iguales = $this->verificarExistenteExcpt($usuario->getUsername(),$usuario->getCorreo(),$usuario->getId());//verifica si los datos de confirmacion son los mismos del usuario
+        $iguales = $this->verificarExistente($usuario->getCorreo(),$usuario->getCorreo(),$usuario->getRol());//verifica si los datos de confirmacion son los mismos del usuario
 
         if($iguales == null){
             $sql = "UPDATE usuarios SET "
@@ -152,10 +122,10 @@ class User{
             . " password= :password"
             . " WHERE id= :id";
             $resultado = $data_source->ejecutarActualizacion($sql, array(
-            ':username'=>$usuario->getUsername(),
+            ':username'=>$usuario->getNickname(),
             ':correo'=>$usuario->getCorreo(),
             ':password'=>$usuario->getPassword(),
-            ':id'=>$usuario->getId()
+            ':id'=>$usuario->getRol()
               )
             );
         }else{
@@ -164,7 +134,7 @@ class User{
 
         return $resultado;
     }
-    */
+    
 
 }
 

@@ -473,59 +473,7 @@ button{
   }
   
 
-  .category__container{
-    grid-template-columns: repeat(3, 200px);
-    justify-content: center;
-  }
 
-  .about__container{
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-  }
-  .about__title,
-  .about__data{
-    text-align: initial;
-  }
-  .about__img{
-    width: 250px;
-  }
-
-  .trick__container{
-    grid-template-columns: repeat(3, 200px);
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .discount__container{
-    grid-template-columns: repeat(2, max-content);
-    justify-content: center;
-    align-items: center;
-    column-gap: 3rem;
-    padding: 3rem 0;
-    border-radius: 3rem;
-  }
-  .discount__img{
-    width: 350px;
-    order: -1;
-  }
-  .discount__data{
-    padding-right: 6rem;
-  }
-
-  .newsletter__container{
-    grid-template-columns: .5fr;
-  }
-
-  .footer__container{
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-    column-gap: 1rem;
-  }
-  .footer__img-two{
-    right: initial;
-    bottom: 0;
-    left: 15%;
-  }
 }
 
 /* For large devices */

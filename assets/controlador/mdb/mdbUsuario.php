@@ -9,30 +9,31 @@
         return $usuario;
     }
 
-    function insertarUsuario($nombre,$correo,$nick,$pass){
+    function insertarUsuario($nombre,$correo,$nick,$pass,$rol){
         $ob=new User();
-        $usuario=new Usuario($nombre,$correo,$nick,$pass,2);
+        $usuario=new Usuario($nombre,$correo,$nick,$pass,$rol);
         $resultado=$ob->insertarUsuario($usuario);
         return $resultado;
     }
-    
-    function modificarUsuario($username,$correo,$pass){
-        $ob=new User();
-        $id = $_SESSION['id'];
 
-        $usuario=new Usuario($id,$username,$correo,$pass);
+    function buscarUsuario($username)
+{
+
+    $dao = new User();
+    $usuario = $dao->buscarUsuario($username);
+    return $usuario;
+}
+    
+    function modificarUsuario($nombre,$correo,$nickname,$password){
+        $ob=new User();
+        $rol = $_SESSION['rol'];
+
+        $usuario=new Usuario($nombre,$correo,$nickname,$password,$rol);
         $resultado=$ob->modificarUsuario($usuario);
         return $resultado;
     }
 
-    function borrarUsuario($username,$password){
-        $ob= new User();
-        $id = $_SESSION['id'];
-
-        $usuario= new Usuario($id,$username," ",$password);
-        $resultado=$ob->borrarUsuario($usuario);
-        return $resultado;
-    }
+  
 
 
 ?>

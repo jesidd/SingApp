@@ -85,7 +85,7 @@
           if(isset($_SESSION['go'])){
             $msg = $_SESSION['go'];
             $icon = 'success';
-              $location = 'window.location.href= "./vistas/inicio.php"';
+              $location = 'window.location.href= "./dashboardAdmin.php"';
           }
         }
       }

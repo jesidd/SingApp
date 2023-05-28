@@ -1,12 +1,12 @@
 <?php
-
+    $conexion = @mysqli_connect($host, 'root', '', 'db_signapp');
     class ConectBe{
-    
+
         private $conexion;
         private $cadenaConexion;
     
         public function __construct(){
-            $this->cadenaConexion ='mysql:host=localhost;dbname=singapp;charset=utf8';
+            $this->cadenaConexion ='mysql:host=localhost;dbname=db_signapp;charset=utf8';
             $this->conexion = new PDO($this->cadenaConexion,'root','');      
         }
 
