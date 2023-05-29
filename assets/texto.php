@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['CORREO']) || $_SESSION['ROL'] != 1) {
+if (!isset($_SESSION['CORREO']) || $_SESSION['ROL'] != 2) {
   header('location: ../vista/sesion.php');
   
 }

@@ -41,6 +41,8 @@
       <a href="#"><i class="fa-solid fa-house"></i> Inicio</a>
       <a href="#services"><i class="fa-solid fa-bell"></i> Notificaciones</a>
       <a href="/texto.php"><i class="fa-solid fa-bell"></i> Texto</a>
+      <a href="/camara.php"><i class="fa-solid fa-bell"></i> Camara</a>
+
 
     </nav>
 
@@ -54,6 +56,8 @@
       <ul class="dropdown-menu">
         <li><a class="dropdown-item  a" href=""><i class="fa-solid fa-house"></i> INICIO</a></li>
         <li><a class="dropdown-item  b" href=""><i class="fa-solid fa-bell"></i> NOTIFICACIONES</a></li>
+        <li><a class="dropdown-item  a" href=/texto.php"><i class="fa-solid fa-bell"></i> TEXTO</a></li>
+        <li><a class="dropdown-item  b" href="/camara.php"><i class="fa-solid fa-bell"></i> CAMARA</a></li>
         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-envelope"></i> MENSAJES</a></li>
         <li><a class="dropdown-item" href="#logoutModal" data-toggle="modal" data-target="#logoutModal"><i
               class="fa-solid fa-right-from-bracket"></i> CERRAR SESION</a></li>
