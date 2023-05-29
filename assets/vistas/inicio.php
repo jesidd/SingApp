@@ -30,7 +30,17 @@
   <title>Inicio</title>
 
 
+<style>
+  .card-header{
+    width: 80%;
+    margin: auto;
+    background: #331ef6;
+    color: white;
+    border-radius: 10rem;
+    border: solid black;
+  }
 
+</style>
 
 
 </head>
@@ -44,9 +54,9 @@
     <nav class="navbar">
       <a href="#"><i class="fa-solid fa-house"></i> Inicio</a>
       <a href="#services"><i class="fa-solid fa-bell"></i> Notificaciones</a>
-      <a href="/texto.php"><i class="fa-solid fa-bell"></i> Texto</a>
-      <a href="/camara.php"><i class="fa-solid fa-bell"></i> Camara</a>
-      <a href="/Voz.php"><i class="fa-solid fa-bell"></i> Voz</a>
+      <a href="texto.php"><i class="fa-solid fa-bell"></i> Texto</a>
+      <a href="camara.php"><i class="fa-solid fa-bell"></i> Camara</a>
+      <a href="Voz.php"><i class="fa-solid fa-bell"></i> Voz</a>
 
 
     </nav>
@@ -145,7 +155,7 @@
       <div class="row">
         <div class="col-lg my-3">
           <div class="card rounded-0">
-            <div class="card-header bg-light">
+            <div class="card-header ">
               <h4 class="miscursos">Noticias</h4>
             </div>
             <div class="card-body">

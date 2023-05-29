@@ -1,8 +1,16 @@
+<?php
+session_start();
+if (!isset($_SESSION['CORREO']) || $_SESSION['ROL'] != 2) {
+  header('location: ../vista/sesion.php');
+  
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Chat</title>
   <link rel="stylesheet" href="css/admin.css">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -102,7 +110,7 @@
   <header class="header">
     <a href="../index.html" class="logo">SignApp</a>
     <nav class="navbar">
-      <a href="#"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="./inicio.php"><i class="fa-solid fa-house"></i> Inicio</a>
       <a href="#services"><i class="fa-solid fa-bell"></i> Notificaciones</a>
     </nav>
     <div class="dropdown">
@@ -112,7 +120,7 @@
         </span>
       </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item  a" href=""><i class="fa-solid fa-house"></i> INICIO</a></li>
+        <li><a class="dropdown-item  a" href="./inicio.php"><i class="fa-solid fa-house"></i> INICIO</a></li>
         <li><a class="dropdown-item  b" href=""><i class="fa-solid fa-bell"></i> NOTIFICACIONES</a></li>
         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-envelope"></i> MENSAJES</a></li>
         <li><a class="dropdown-item" href="#logoutModal" data-toggle="modal" data-target="#logoutModal"><i
@@ -191,6 +199,10 @@
       detenerCamara();
     });
   </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
 </html>
 

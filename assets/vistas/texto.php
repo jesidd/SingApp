@@ -36,7 +36,7 @@ if (!isset($_SESSION['CORREO']) || $_SESSION['ROL'] != 2) {
 
 #message-traduccion{
   margin: auto;
-  background-image: url('img/bk2.jpg');
+  background-image: url('./img/bk.jpg');
   background-size: 100%;
   margin-bottom: 10px;
   
@@ -112,7 +112,7 @@ if (!isset($_SESSION['CORREO']) || $_SESSION['ROL'] != 2) {
 
     <a href="../index.html" class="logo">SignApp</a>
     <nav class="navbar">
-      <a href="#"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="./inicio.php"><i class="fa-solid fa-house"></i> Inicio</a>
       <a href="#services"><i class="fa-solid fa-bell"></i> Notificaciones</a>
 
     </nav>
@@ -183,6 +183,9 @@ function getCurrentTime() {
 }
 
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
 </html>
 

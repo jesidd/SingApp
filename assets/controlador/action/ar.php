@@ -24,6 +24,6 @@
        
 
     }
-    header("location: ../../dashboardAdmin.php");
+    header("location: ../../vistas/dashboardAdmin.php");
 
 ?>

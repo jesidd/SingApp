@@ -183,7 +183,7 @@ $query = mysqli_query($conexion, $consulta);
 
 
                         <a class="btn_1"
-                          href="controlador/action/eliminarcuenta.php?correo=<?php echo $data['correo']; ?>"><i
+                          href="../controlador/action/eliminarcuenta.php?correo=<?php echo $data['correo']; ?>"><i
                             class="fa-solid fa-trash"></i>
                         </a>
             
@@ -232,7 +232,7 @@ $query = mysqli_query($conexion, $consulta);
         </div>
         <div class="modal-body">
           <form class="form-signin needs-validation" novalidate method="post"
-            action="./controlador/action/ar.php" id="formulario">
+            action="../controlador/action/ar.php" id="formulario">
 
             <input type="text" name="usu_id" id="usu_id">
 
