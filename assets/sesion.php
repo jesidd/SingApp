@@ -83,9 +83,16 @@
             session_destroy(); 
         }else{
           if(isset($_SESSION['go'])){
-            $msg = $_SESSION['go'];
-            $icon = 'success';
-              $location = 'window.location.href= "./dashboardAdmin.php"';
+
+            if($_SESSION['ROL'] == 1){
+              $msg = $_SESSION['go'];
+              $icon = 'success';
+              $location = 'window.location.href= "./vistas/dashboardAdmin.php"';
+            }else{
+              $msg = $_SESSION['go'];
+              $icon = 'success';
+              $location = 'window.location.href= "./vistas/inicio.php"';
+            }
           }
         }
       }

@@ -1,14 +1,18 @@
 <?php
-session_start();
-if (!isset($_SESSION['CORREO']) || $_SESSION['ROL'] != 1) {
-  header('location: ../vista/sesion.php');
-  
-}
+  session_start();
+  if (!isset($_SESSION['CORREO'])) {
+      session_destroy();
+      header('locatio: ../sesion.php');
+      die();
+  }elseif($_SESSION['ROL']==2){
+    header('location: ./inicio.php');
+    die();
+  }
 
 
 
 
-include './modelo/ConectBe.php';
+include '../modelo/ConectBe.php';
 $consulta = "SELECT * FROM usuario ";
 if (isset($_POST['buscar'])) {
   $correo = $_POST['correo'];
